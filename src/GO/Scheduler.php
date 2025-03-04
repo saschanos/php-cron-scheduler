@@ -99,7 +99,7 @@ class Scheduler
      * @param  string  $id   Optional custom identifier
      * @return Job
      */
-    public function call(callable $fn, $args = [], $id = null)
+    public function call(?callable $fn, $args = [], $id = null)
     {
         $job = new Job($fn, $args, $id);
 
@@ -163,7 +163,7 @@ class Scheduler
      * @param  DateTime  $runTime  Optional, run at specific moment
      * @return array  Executed jobs
      */
-    public function run(Datetime $runTime = null)
+    public function run(?Datetime $runTime = null)
     {
         $jobs = $this->getQueuedJobs();
 
